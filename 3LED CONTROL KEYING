@@ -1,0 +1,44 @@
+import RPi.GPIO as GPIO
+GPIO.setmode (GPIO.BCM)
+GPIO.setup (2, GPIO.OUT)
+GPIO.setup(3,GPIO.OUT)
+GPIO.setup (4, GPIO.OUT)
+GPIO.setwarnings (False)
+
+while True:
+
+	a=int(input("ENTER COMMAND FOR SWITCHING"))
+	if a==1:
+
+		GPIO.output (2,True)
+		print("LED 1 ON")
+
+	elif a==4:
+
+		GPIO.output (2,False)
+		print("LED 1 OFF")
+
+	elif a==2:
+
+		GPIO.output(3,True)
+		print("LED 2 ON")
+
+	elif a==5:
+
+		GPIO.output (3,False)
+		print("LED 2 OFF")
+
+	elif a==3:
+
+		GPIO.output (4,True)
+		print("LED 3 ON")
+
+	elif a==6:
+
+		GPIO.output (4,False)
+		print("LED 3 OFF")
+
+	else:
+
+		print("ENTER VALID SWITCHING KEY")
+GPIO.cleanup()

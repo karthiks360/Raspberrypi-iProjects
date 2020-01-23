@@ -1,0 +1,22 @@
+import RPi.GPIO as GPIO
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(2, GPIO.OUT)
+
+while True:
+
+	a=int (input ("ENTER 1 OR 2 FOR SWITCHING"))
+	if a==1:
+
+		GPIO.output (2, True)
+		print ("LED ON")
+
+	elif a==2:
+
+		GPIO.output (2, False)
+		print("LED OFF")
+
+	else:
+
+		print ("ENTER VALID SWITCH KEY")
+
+GPIO.cleanup ()
